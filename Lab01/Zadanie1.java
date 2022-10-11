@@ -8,8 +8,6 @@ public class Zadanie1 {
             int n = Integer.parseInt(args[0]);
             double r_max = Double.parseDouble(args[1]);
 
-
-
             Random rand = new Random();
             double alfa, r, x, y;
             for(int i = 0; i < n; i++)
