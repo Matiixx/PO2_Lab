@@ -44,22 +44,22 @@ public class Complex {
         return imaginary;
     }
 
-    static Complex add(final Complex c1, final Complex c2) {
+    static Complex add(Complex c1, Complex c2) {
         return new Complex(c1.real + c2.real, c1.imaginary + c2.imaginary);
     }
 
-    static Complex subtract(final Complex c1, final Complex c2) {
+    static Complex subtract(Complex c1, Complex c2) {
         return new Complex(c1.real - c2.real, c1.imaginary - c2.imaginary);
     }
 
-    static Complex multiply(final Complex c1, final Complex c2) {
+    static Complex multiply(Complex c1, Complex c2) {
         return new Complex(
                 c1.real * c2.real - c1.imaginary * c2.imaginary,
                 c1.imaginary * c2.real + c1.real * c2.imaginary
         );
     }
 
-    static Complex multiply(final Complex c1, final double d) {
+    static Complex multiply(Complex c1, double d) {
         Complex c2 = new Complex(d);
         return new Complex(
                 c1.real * c2.real - c1.imaginary * c2.imaginary,
@@ -67,7 +67,7 @@ public class Complex {
         );
     }
 
-    static Complex divide(final Complex c1, final Complex c2) {
+    static Complex divide(Complex c1, Complex c2) {
         if (Double.compare(c2.real, 0.0) == 0 && Double.compare(c2.imaginary, 0.0) == 0)
             return new Complex(Double.longBitsToDouble(0x7ff8000000000000L), Double.longBitsToDouble(0x7ff8000000000000L));
         return new Complex(
@@ -80,7 +80,7 @@ public class Complex {
         return Math.sqrt(this.real * this.real + this.imaginary * this.imaginary);
     }
 
-    static Complex sqrt(final double a) {
+    static Complex sqrt(double a) {
         if (a >= 0)
             return new Complex(Math.sqrt(a));
         return new Complex(0.0, Math.sqrt(-a));
